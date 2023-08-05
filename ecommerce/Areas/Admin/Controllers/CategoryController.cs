@@ -4,7 +4,7 @@ using ecommerce.Repository;
 using ecommerce.Repository.IRepository;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ecommerce.Controllers
+namespace ecommerce.Areas.Admin.Controllers
 {
 
     public class CategoryController : Controller
@@ -33,12 +33,12 @@ namespace ecommerce.Controllers
         [IgnoreAntiforgeryToken]
         public IActionResult Create(Category obj)
         {
-            if(obj.Name == obj.DisplayOrder.ToString())
+            if (obj.Name == obj.DisplayOrder.ToString())
             {
                 ModelState.AddModelError("name", "The Display Order cannot exactly match the Name.");
             }
 
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _unitOfWork.Category.Add(obj);
                 _unitOfWork.Save();
@@ -47,12 +47,12 @@ namespace ecommerce.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(obj); 
+            return View(obj);
         }
 
         public IActionResult Edit(int? id)
         {
-            if (id == null || id == 0 )
+            if (id == null || id == 0)
             {
                 return NotFound();
             }
@@ -119,7 +119,7 @@ namespace ecommerce.Controllers
             _unitOfWork.Save();
             TempData["success"] = "Category deleted successfully";
             return RedirectToAction("Index");
-          
+
         }
     }
 
