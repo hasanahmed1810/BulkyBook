@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ecommerce.Areas.Admin.Controllers
 {
-
+    [Area("Admin")]
     public class ProductController : Controller
     {
 

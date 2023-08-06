@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ecommerce.Areas.Admin.Controllers
 {
 
+    [Area("Admin")]
     public class CoverTypeController : Controller
     {
 
