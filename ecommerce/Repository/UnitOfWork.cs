@@ -12,6 +12,9 @@ namespace ecommerce.Repository
         public IProductRepository Product { get; private set; }
         public ICompanyRepository Company { get; private set; }
 
+        public IShoppingCartRepository ShoppingCart { get; private set; }   
+        public IApplicationUserRepository ApplicationUser { get; private set; }
+
         public UnitOfWork(ApplicationDbContext db)
         {
             _db = db;
@@ -19,6 +22,8 @@ namespace ecommerce.Repository
             CoverType = new CoverTypeRepository(_db);
             Product = new ProductRepository(_db);
             Company = new CompanyRepository(_db);
+            ApplicationUser = new ApplicationUserRepository(_db);
+            ShoppingCart = new ShoppingCartRepository(_db);
         }
 
         public void Save() 

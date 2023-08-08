@@ -11,8 +11,4 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="6.0.20" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-
 </Project>
